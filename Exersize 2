@@ -1,0 +1,12 @@
+class Solution {
+    fun merge(nums1: IntArray, m: Int, nums2: IntArray, n: Int) {
+        val merged = (nums1.take(m) + nums2.take(n)).sorted()
+
+        merged.forEachIndexed { index, value ->
+            nums1[index] = value
+        }
+    }
+}
+//with take() we take non null numbers
+//sorted() sorts it
+//with index and value we store them back into nums1
