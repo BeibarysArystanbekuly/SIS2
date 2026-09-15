@@ -1,0 +1,12 @@
+class Solution {
+    fun maxCount(m: Int, n: Int, ops: Array<IntArray>): Int {
+        val minRow = ops.minOfOrNull { it[0] } ?: m
+        val minCol = ops.minOfOrNull { it[1] } ?: n
+
+        return minRow * minCol
+    }
+}
+//every operation increases integers from top left
+//we find the first smallest value then second smallest value
+//these two values give value of common area. multiplied they give the number of max elements
+//if ops are empty we use m or n because all elements in the matrix are equal
