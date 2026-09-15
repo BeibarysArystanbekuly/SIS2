@@ -1,0 +1,15 @@
+class Solution {
+    fun commonChars(words: Array<String>): List<String> =
+        ('a'..'z').flatMap { char ->
+            List(words.minOf { word -> word.count { it == char } }) {
+                char.toString()
+            }
+        }
+}
+//we find characters that are in every word
+//we check from a to z
+//we count it
+//minOf finds the smallesst count in all words. to find how many copies can appear in the answer
+//List creates the copies
+//flatMap merges it all into one list
+//if l appears two times, we put it 2 times into the answer.
