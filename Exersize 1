@@ -1,0 +1,16 @@
+class Solution {
+    fun strStr(haystack: String, needle: String): Int {
+        val lastPossibleIndex = haystack.length - needle.length
+
+        return (0..lastPossibleIndex)
+            .firstOrNull { index ->
+                haystack.startsWith(needle, index)
+            } ?: -1
+    }
+}
+
+//we subtract number of needle from haystack
+//check every index and look the first one that matches
+//haystack.startsWith(needle, index) checks if needle starts from that index in haystack.
+//finds a match we get a result
+// no, we get a -1
